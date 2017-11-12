@@ -10,13 +10,21 @@
 	</script>
 
 	<style type="text/css">
+	body{cursor: url("http://downloads.totallyfreecursors.com/cursor_files/camera.cur"), url("http://downloads.totallyfreecursors.com/thumbnails/camera.gif"), auto;}
 
 	#info p{font-size: 0.9em; line-height: 1.4em; padding-left: 20px; padding-top: 20px; padding-right: 20px;}
 	#info h2{font-size: 1em; padding-left: 60px; padding-top: 10px; position: block;}
 	#info{ background: url('./img/info.png'); background-size: 100%; width: 271px; height: 484px; position: absolute; z-index: 9999; border-width: 2px; border-color: solid black; right:100px; top:100px; cursor: hand;}
 
+	#member{ background-color: white; background-size: 100%; width: 271px; height: 200px; position: absolute; z-index: 9999; border-width: 2px; border-color: solid black; left:100px; top:100px; cursor: hand; border:4px solid  black;}
+
+	#member p{font-size: 0.9em; line-height: 1.4em; padding-left: 20px; padding-top: 20px; padding-right: 20px; z-index: 9999; }
+
+	#video{background-color: black; width: 500px; height:275px; z-index: 8888; margin:0; padding: 0; position: absolute; cursor: hand; left:150px; top:350px;}
+	#studio {width: 500px; height: 275px; }
+
     .imgBox {
-        width:25%;
+        width:25%; 
     }
     
     @media screen and (max-device-width : 736px) {
@@ -24,12 +32,11 @@
             width:90%;
         }
     }
-  
-	</style>
 
 
 	</style>
 	<script>
+
 
     function randImg(){
         var ry = Math.floor((Math.random() * 95) + 1);
@@ -40,14 +47,22 @@
         return '<img src="./main/' + ry + '.jpg" border="0" width="100%">';
     }
 
-     $( function() {
+    $( function() {
     $( "#info" ).draggable();
+  } );
+    $( function() {
+    $( "#video" ).draggable();
+  } );
+
+    $( function() {
+    $( "#member" ).draggable();
   } );
 
 	</script>
     </head>
 
     <body>
+  </div>
     <div id="info" class="ui-widget-content">
     	<h2>CMCO 사진팀.2017</h2>
     	<p>본 작업은 한경대학교 디자인학과
@@ -59,8 +74,26 @@
     	<br>
     	<br>페이지는 리로드를 할 때마다
 		<br>바뀌는 사진의 순서를 볼 수 있다.
-		<br>이 설명은 드래그가 가능하다.</p>
+		<br>이미지를 제외한 박스는 
+		<br>드래그가 가능하다.</p>
 	</div>
+	<div id="video" class="ui-widget-content" align="center" title="컬러필터 실습">
+		<video autoplay id="studio" style="border: 4px solid black;"><source src="./img/studio.mp4" type="video/mp4" title="컬러필터 실습"></video>
+	</div>
+
+	<div style="position: fixed; right: 10px; top: 50%"><a href="index.html"><img style="width: 50px;" src="./img/reload.png" title="reload"></a></div>
+
+	<div id="member" class="ui-widget-content">
+    	<p><mark>CMCO 사진팀.2017</mark>
+    	<br>캡틴: 강혜린 / 부캡틴: 오훈택
+    	<br>김민서
+    	<br>윤정민
+    	<br>이지수
+    	<br>정민아
+    	</p>
+	</div>
+
+
     <div style="float:left;margin:2%;" class="imgBox"><script>document.write(randImg());</script></div>
     <div style="float:left;margin:2%;" class="imgBox"><script>document.write(randImg());</script></div>
     <div style="float:left;margin:2%;" class="imgBox"><script>document.write(randImg());</script></div>
