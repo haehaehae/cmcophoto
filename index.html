@@ -39,12 +39,12 @@
 
 
     function randImg(){
-        var ry = Math.floor((Math.random() * 95) + 1);
-        if(ry < 10) ry = '00' + ry;
-        else ry = '0' + ry;
+        var ry = Math.floor((Math.random() * 153) + 1);
+        if(ry < 100) ry = '0' + ry;
+        else ry = '' + ry;
         
         
-        return '<img src="./main/' + ry + '.jpg" border="0" width="100%">';
+        return '<img src="./home/' + ry + '.jpg" border="0" width="100%">';
     }
 
     $( function() {
