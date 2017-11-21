@@ -20,7 +20,7 @@
 
 	#member p{font-size: 0.9em; line-height: 1.4em; padding-left: 20px; padding-top: 20px; padding-right: 20px; z-index: 9999; }
 
-	#video{background-color: black; width: 500px; height:275px; z-index: 8888; margin:0; padding: 0; position: absolute; cursor: hand; left:150px; top:350px; border: 4px; border-color: solid black; }
+	#video{background-color: black; width: 505px; height:280px; z-index: 8888; margin:0; padding: 0; position: absolute; cursor: hand; left:150px; top:350px; border: 4px; border-color: solid black; }
 	#studio {width: 500px; height: 275px; }
 
     .imgBox {
@@ -37,13 +37,18 @@
 	</style>
 	<script>
 
+    function randomBH(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
     function randImg(){
-        var ry = Math.floor((Math.random() * 153) + 1);
+        var ry = randomBH(1,153);
         if(ry < 100) ry = '0' + ry;
         else ry = '' + ry;
         
-        
+        console.log(ry);
         return '<img src="./home/' + ry + '.jpg" border="0" width="100%">';
     }
 
@@ -81,14 +86,14 @@
 		<video autoplay id="studio" style="border: 4px solid black;"><source src="./img/studio.mp4" type="video/mp4" title="컬러필터 실습"></video>
 	</div>
 
-	<div style="position: fixed; right: 10px; top: 50% cursor:url("http://downloads.totallyfreecursors.com/cursor_files/camera.cur");"><a href="index.html"><img style="width: 50px;" src="./img/reload.png" title="reload"></a></div>
+	<div style="position: fixed; right: 10px; top: 50%"><a href="index.html"><img style="width: 50px;" src="./img/reload.png" title="reload"></a></div>
 
 	<div id="member" class="ui-widget-content">
     	<p><mark>CMCO 사진팀.2017</mark>
-    	<br>캡틴: 강혜린 / 부캡틴: 오훈택
+    	<br>캡틴: 강혜린 
+        <br>부캡틴: 오훈택
     	<br>김민서
     	<br>윤정민
-    	<br>이지수
     	<br>정민아
     	</p>
 	</div>
